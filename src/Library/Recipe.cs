@@ -15,11 +15,13 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
+
         /*  Creator:
             Nos parecio apropiado aplicar el patron Creator para el metodo AddStep, porque Recipe agrega objetos de Step en si misma y los contiene en la lista de steps,
             por esto mismo lo mas adecuado, en vez de pasarle un step, es crearlo dentro del mismo metodo. Tambien cumple mas condiciones del patron creator como que Recipe
             usa de forma cercana al step, como por ejemplo para los metodos GetTextToPrint() y GetProductionCost(),y ademas tambien guarda instancias del mismo.
         */
+
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
             Step step = new Step(input,quantity,equipment,time);
